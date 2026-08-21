@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Asylum: Advanced Medical Terminology Escape Room</title>
+<style>
+body{margin:0;background:#080808;color:#eee;font-family:Arial,sans-serif}header{background:#141414;padding:22px;text-align:center;border-bottom:3px solid #7b1111}h1{margin:0;color:#d02b2b;letter-spacing:2px}h2{color:#d5a33b}main{max-width:950px;margin:auto;padding:24px}.room{display:none}.room.active{display:block}.card{background:#171717;border:1px solid #444;padding:24px;border-radius:8px;box-shadow:0 0 22px #000;margin:18px 0}.warning{color:#ed6767;font-weight:bold}.progress{font-size:13px;color:#aaa}.question{margin:12px 0;padding:14px;background:#0f0f0f;border-left:4px solid #7b1111}input{background:#080808;color:#fff;border:1px solid #777;padding:12px;width:90%;font-size:16px}button{background:#7b1111;color:#fff;border:0;padding:13px 20px;font-weight:bold;cursor:pointer;margin-top:12px}button:hover{background:#a71919}.lock{font-size:45px;text-align:center}.success{color:#75d681;font-weight:bold}.fail{color:#ff6868;font-weight:bold}.hint{color:#aaa;font-size:14px}
+</style></head>
+<body>
+<header><h1>THE ASYLUM</h1><div>ADVANCED MEDICAL TERMINOLOGY ESCAPE ROOM</div></header>
+<main>
+<div class="card"><p class="warning">⚠ PATIENT STATUS: UNSTABLE — DO NOT ENTER ALONE</p>
+<p>The patient has locked down the hospital. Four areas stand between you and freedom.</p>
+<p>This version is harder: every room contains multiple clues. Solve them all, then use the extraction rule to create the lock code.</p></div>
+
+<section id="r1" class="room active"><h2>ROOM 1 — THE ADMISSION WARD</h2><p class="progress">LOCK 1 OF 4 • 8 CLUES</p><div class="card"><div class="lock">🔒</div>
+<p>Write the correct Chapter 1 term for each clue.</p>
+<ol>
+<li>Toward the front: __________</li><li>Toward the back: __________</li><li>Toward the head: __________</li><li>Toward the feet: __________</li>
+<li>Away from the point of attachment: __________</li><li>Toward the point of attachment: __________</li><li>Toward the middle: __________</li><li>Away from the middle: __________</li>
+</ol><p class="hint">Extraction: Take the first letter of answers #1, #3, #5, and #7.</p>
+<input id="a1" placeholder="Enter 4-letter code"><button onclick="check(1,'acdm')">UNLOCK THE DOOR</button><div id="m1"></div></div></section>
+
+<section id="r2" class="room"><h2>ROOM 2 — THE SURGICAL WING</h2><p class="progress">LOCK 2 OF 4 • 10 CLUES</p><div class="card"><div class="lock">🔐</div>
+<p>Identify the correct word part from the Chapter 1 list.</p>
+<ol>
+<li>Heart: __________</li><li>Stomach: __________</li><li>Liver: __________</li><li>Nerve: __________</li><li>Joint: __________</li>
+<li>Cell: __________</li><li>Muscle: __________</li><li>Blood/blood condition: __________</li><li>Tissue: __________</li><li>Bone: <b>not on today's list</b></li>
+</ol><p class="hint">Extraction: Take the first letter of the answers to #6, #7, #8, and #9. Ignore #10 because it is not in the provided list.</p>
+<input id="a2" placeholder="Enter 4-letter code"><button onclick="check(2,'cmeh')">UNLOCK THE DOOR</button><div id="m2"></div></div></section>
+
+<section id="r3" class="room"><h2>ROOM 3 — THE PATIENT'S CELL</h2><p class="progress">LOCK 3 OF 4 • 10 CLUES</p><div class="card"><div class="lock">🗝️</div>
+<p>Identify the correct suffix from the Chapter 1 list.</p>
+<ol>
+<li>Inflammation: __________</li><li>Surgical removal: __________</li><li>Pain: __________</li><li>Cell: __________</li><li>Blood/blood condition: __________</li>
+<li>Study of: __________</li><li>Specialist: __________</li><li>Condition: __________</li><li>Enlargement: __________</li><li>Formation/producing: __________</li>
+</ol><p class="hint">Extraction: Take the last letter of answers #1, #3, #5, #7, and #9.</p>
+<input id="a3" placeholder="Enter 5-letter code"><button onclick="check(3,'saaty')">UNLOCK THE DOOR</button><div id="m3"></div></div></section>
+
+<section id="r4" class="room"><h2>ROOM 4 — THE FINAL EXAMINATION</h2><p class="progress">FINAL LOCK • 12 CLUES</p><div class="card"><div class="lock">☠️</div>
+<p>The final chart is a disaster. Identify each Chapter 1 term.</p>
+<ol>
+<li>Plane dividing anterior/posterior: __________</li><li>Plane dividing left/right: __________</li><li>Plane dividing superior/inferior: __________</li>
+<li>Cavity containing the brain: __________</li><li>Cavity containing the spinal cord: __________</li><li>Cavity containing thoracic organs: __________</li>
+<li>Cavity containing abdominal and pelvic organs: __________</li><li>Lying face down: __________</li><li>Lying face up: __________</li>
+<li>Position with upper body elevated: __________</li><li>Region around the navel: __________</li><li>Region above the stomach: __________</li>
+</ol><p class="hint">FINAL EXTRACTION: Take the first letter of #1, #2, #3, #4, #8, and #9.</p>
+<input id="a4" placeholder="Enter 6-letter code"><button onclick="check(4,'fstcps')">ESCAPE THE ASYLUM</button><div id="m4"></div></div></section>
+
+<section id="win" class="room"><div class="card" style="text-align:center"><h2>YOU ESCAPED!</h2><p style="font-size:50px">🚪🏃‍♀️💨</p>
+<p>You survived all four rooms of the asylum.</p><p>The puzzles are based on your uploaded Chapter 1 vocabulary list. fileciteturn0file0L2-L13 fileciteturn0file0L15-L41</p></div></section>
+</main>
+<script>
+function check(n,code){let x=document.getElementById('a'+n).value.trim().toLowerCase().replace(/[^a-z]/g,''),m=document.getElementById('m'+n);
+if(x===code){m.className='success';m.textContent='✓ LOCK OPENED. The next area is unlocked...';setTimeout(()=>{document.getElementById('r'+n).classList.remove('active');document.getElementById(n===4?'win':'r'+(n+1)).classList.add('active');scrollTo(0,0)},700)}
+else{m.className='fail';m.textContent='✗ WRONG CODE. Recheck every clue and the extraction instructions.'}}
+</script></body></html>
